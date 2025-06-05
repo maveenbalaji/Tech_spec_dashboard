@@ -1,237 +1,247 @@
-Efftronics Server Dashboard
-Overview
+Sure! Here's **your complete project documentation** reformatted in a **clean, consistent markdown structure** exactly like the format you've requested:
+
+---
+
+# Efftronics Server Dashboard
+
+## Overview
+
 Efftronics Server Dashboard is a web application that scrapes hardware data (processors, GPUs, laptops, memory, tablets, desktops) from various websites, stores the data in a TypeScript (.ts) file, and displays it using a React.js frontend. The project provides price and benchmark analysis for 2025, helping users compare hardware options.
 
-Backend: Python script using Selenium and BeautifulSoup to scrape data and save it in a .ts file located in the @/data folder.
-Frontend: Node.js with React.js to render the scraped data in a user-friendly dashboard with graphs and tables.
-Last Updated: 04-06-2025
+* **Backend**: Python script using Selenium and BeautifulSoup to scrape data and save it in a `.ts` file located in the `@/data` folder.
+* **Frontend**: Node.js with React.js to render the scraped data in a user-friendly dashboard with graphs and tables.
+* **Last Updated**: 04-06-2025
 
-Features
+## Features
 
-Scrape hardware details (e.g., price, benchmarks, specs) for processors, GPUs, laptops, memory, tablets, and desktops.
-Visualize price and benchmark trends for 2025 using charts.
-Filter and search hardware by category, brand, or name.
-Display suggested hardware based on best value (low price, high benchmark).
+* Scrape hardware details (e.g., price, benchmarks, specs) for processors, GPUs, laptops, memory, tablets, and desktops.
+* Visualize price and benchmark trends for 2025 using charts.
+* Filter and search hardware by category, brand, or name.
+* Display suggested hardware based on best value (low price, high benchmark).
 
-Prerequisites
+## Prerequisites
 
-Python 3.8+: For the backend scraping script.
-Node.js 16+: For the frontend React.js application.
-ChromeDriver: Compatible with your installed Chrome version for Selenium.
-Dependencies:
-Backend: Install Python packages listed in requirements.txt.
-Frontend: Install Node.js dependencies via npm install.
+* **Python 3.8+**: For the backend scraping script.
+* **Node.js 16+**: For the frontend React.js application.
+* **ChromeDriver**: Compatible with your installed Chrome version for Selenium.
 
+### Dependencies
 
+* **Backend**: Install Python packages listed in `requirements.txt`.
+* **Frontend**: Install Node.js dependencies via `npm install`.
 
-Setup Instructions
-Backend (Python)
+## Setup Instructions
 
-Clone the repository:git clone <repository-url>
-cd <repository-folder>
+### Backend (Python)
 
+1. Clone the repository:
 
-Install Python dependencies:pip install -r requirements.txt
+   ```bash
+   git clone <repository-url>
+   cd <repository-folder>
+   ```
 
+2. Install Python dependencies:
 
-Ensure ChromeDriver is installed and added to your system PATH. Download it from here if needed.
-Run the Python script to scrape data:python scraper.py
+   ```bash
+   pip install -r requirements.txt
+   ```
 
+3. Ensure ChromeDriver is installed and added to your system PATH. Download it from [https://chromedriver.chromium.org/](https://chromedriver.chromium.org/) if needed.
 
-The script scrapes data and saves it to @/data/hardwareData.ts.
-Logs are generated for debugging (check scraper.log).
+4. Run the Python script to scrape data:
 
+   ```bash
+   python scraper.py
+   ```
 
+* The script scrapes data and saves it to `@/data/hardwareData.ts`.
+* Logs are generated for debugging (check `scraper.log`).
 
-Frontend (Node.js/React.js)
+### Frontend (Node.js/React.js)
 
-Navigate to the frontend directory:cd frontend
+1. Navigate to the frontend directory:
 
+   ```bash
+   cd frontend
+   ```
 
-Install Node.js dependencies:npm install
+2. Install Node.js dependencies:
 
+   ```bash
+   npm install
+   ```
 
-Start the development server:npm start
+3. Start the development server:
 
+   ```bash
+   npm start
+   ```
 
-The app will be available at http://localhost:3000.
-It reads data from @/data/hardwareData.ts to display the dashboard.
+* The app will be available at `http://localhost:3000`.
+* It reads data from `@/data/hardwareData.ts` to display the dashboard.
 
+## Project Structure
 
+* `/scraper.py`: Python script for web scraping.
+* `/frontend/`: React.js frontend code.
+* `@/data/hardwareData.ts`: TypeScript file storing scraped hardware data.
+* `/logs/scraper.log`: Log file for backend scraping errors.
 
-Project Structure
+## Pages Overview
 
-/scraper.py: Python script for web scraping.
-/frontend/: React.js frontend code.
-@/data/hardwareData.ts: TypeScript file storing scraped hardware data.
-/logs/scraper.log: Log file for backend scraping errors.
-
-Pages Overview
 The dashboard consists of six main pages, each dedicated to a specific hardware category. Below is a detailed description of each page, including the data displayed, visualizations, and user interactions.
-Latest Processors List
-This page provides a comprehensive list of the latest processors for 2025, focusing on their performance and price metrics.
 
-Data Displayed:
-A table listing processors with columns for Name, CPU Class (e.g., Laptop, Desktop, Server), Price (USD), Price/Core (USD), Benchmark (Single-Core), and Benchmark (Multi-Core).
-Example: Intel Core Ultra 5 235U, Laptop, $332.00 USD, $27.8667 USD/core, 3907 (Single-Core), 18101 (Multi-Core).
-Suggested processors based on best value (low price, high benchmark), e.g., Intel Core Ultra 7 256V at $484.00 with a Multi-Core Benchmark of $40390.
+---
 
+### Latest Processors List
 
-Visualizations:
-A combined chart showing Benchmark (Single-Core) in red, Benchmark (Multi-Core) in green, and Price (USD) in blue for 2025.
-A secondary chart comparing Price and Benchmark trends across multiple years (2020–2025) for selected processors.
+#### Data Displayed
 
+* Table columns: Name, CPU Class, Price (USD), Price/Core (USD), Benchmark (Single-Core), Benchmark (Multi-Core)
+* Example: `Intel Core Ultra 5 235U`, Laptop, `$332.00 USD`, `$27.8667 USD/core`, `3907`, `18101`
+* Suggested processors for best value: e.g., `Intel Core Ultra 7 256V`, `$484.00`, Benchmark `40390`
 
-User Interactions:
-Search by processor name (e.g., "Intel Ultra").
-Filter by year (2020–2025) using tabs above the chart.
-Toggle between "Price & Benchmark" views using buttons.
-Compare processors by selecting them (via the "Compare" button).
-Clear filters using the "Clear" button.
+#### Visualizations
 
+* Combined chart with:
 
+  * Single-Core Benchmark: Red
+  * Multi-Core Benchmark: Green
+  * Price: Blue
+* Secondary multi-year (2020–2025) price & benchmark trend chart
 
-GPUs
-This page displays GPU data, focusing on performance metrics like PassMark scores and their launch prices.
+#### User Interactions
 
-Data Displayed:
-A table listing GPUs with columns for Rank, GPU Name, Type, PassMark Score, Architecture, Release Date, TDP (W), Interface, Width, Max RAM, Core Clock, Boost Clock (MHz), Price (MSRP), Display Connectors, and Price/Score.
-Example: GeForce RTX 5090, Desktop, PassMark Score 40342, Blackwell Architecture, Released 30 January 2025, Price $1999.00 USD, Price/Score 0.0496.
-Suggested GPUs for best value (low launch price, high PassMark score), e.g., GeForce RTX 5070 Ti at $749.00 with a PassMark Score of 32875.
+* Search by name
+* Filter by year
+* Toggle views: Price & Benchmark
+* Compare processors
+* Clear filters
 
+---
 
-Visualizations:
-A line chart showing Launch Price (MSRP) in green and PassMark Score in blue for 2025.
-A multi-year chart (2020–2025) comparing price and PassMark trends for selected GPUs.
+### GPUs
 
+#### Data Displayed
 
-User Interactions:
-Search by GPU name (e.g., "GeForce RTX 5090").
-Filter by year using the year tabs.
-Toggle "Price/PassMark Analysis" view.
-Clear filters with the "Clear" button.
+* Table columns: Rank, Name, Type, PassMark Score, Architecture, Release Date, TDP, Interface, Width, Max RAM, Core Clock, Boost Clock, Price (MSRP), Display Connectors, Price/Score
+* Example: `GeForce RTX 5090`, Desktop, `40342`, `Blackwell`, `30 Jan 2025`, `$1999.00`, `0.0496`
+* Suggested GPUs: `RTX 5070 Ti`, `$749.00`, Score `32875`
 
+#### Visualizations
 
+* Line chart for Launch Price vs PassMark Score (2025)
+* Multi-year trend (2020–2025) for selected GPUs
 
-Laptops
-This page lists laptops with their specifications and prices, tailored for users looking to compare devices.
+#### User Interactions
 
-Data Displayed:
-A table with columns for S.No, Name, Processor, RAM, Storage, Graphics, Display, Operating System, and Price.
-Example: Latitude 3550 Laptop, 13th Gen Intel Core i5-1235U, 8 GB DDR5, 512 GB M.2 PCIe Gen 4 NVMe, Intel Integrated Iris Xe, 15.6" FHD, Windows 11 Pro, ₹94,447.81.
-A summary of brands (e.g., HP: 53, Lenovo: 14, Dell: 15) with counts.
+* Search by name
+* Filter by year
+* Toggle: Price/PassMark Analysis
+* Clear filters
 
+---
 
-Visualizations:
-None on this page (focus is on tabular data).
+### Laptops
 
+#### Data Displayed
 
-User Interactions:
-Search by name or processor (e.g., "Intel Core Ultra 5").
-Filter by brand (HP, Lenovo, Dell) using buttons.
-Clear filters with the "Clear" button.
+* Table columns: S.No, Name, Processor, RAM, Storage, Graphics, Display, OS, Price
+* Example: `Latitude 3550`, `Intel Core i5-1235U`, `8 GB`, `512 GB SSD`, `Intel Iris Xe`, `15.6" FHD`, `Windows 11 Pro`, `₹94,447.81`
+* Brand summary: HP: 53, Lenovo: 14, Dell: 15
 
+#### Visualizations
 
+* None (tabular focus)
 
-Memory
-This page provides details on memory modules, focusing on performance metrics like read/write speeds and latency.
+#### User Interactions
 
-Data Displayed:
-A table with columns for S.No, Name, Type, Capacity, DB Ops, Read Cached, Read Uncached, Write, Latency, Threaded, Average Mark, Launch Date, and Price.
-Example: Corsair CMR32GX4M2D3000C16, DDR4, 16 GB, 6.196 KOps/Sec, 32.034 MBytes/Sec (Read Cached), 18.554 MBytes/Sec (Read Uncached), 14.238 MBytes/Sec (Write), 32 ns Latency, 36.146 MBytes/Sec (Threaded), Average Mark 3471, Launched 04-14-2025, Price $235.99 USD.
-Suggested memory modules for best value (low price, high average mark), e.g., Corsair CMR32GX4M2D3000C16 at $235.99 with an Average Mark of 3471.
+* Search by name or processor
+* Filter by brand
+* Clear filters
 
+---
 
-Visualizations:
-A line chart showing Price in green and Average Mark in blue for 2025.
-A multi-year chart (2020–2025) comparing price and average mark trends.
+### Memory
 
+#### Data Displayed
 
-User Interactions:
-Search by memory name (e.g., "Corsair").
-Filter by year using the year tabs.
-Toggle "Price & Average Mark Analysis" view.
-Clear filters with the "Clear" button.
+* Table columns: S.No, Name, Type, Capacity, DB Ops, Read Cached, Read Uncached, Write, Latency, Threaded, Average Mark, Launch Date, Price
+* Example: `Corsair CMR32GX4M2D3000C16`, DDR4, `16 GB`, `6.196 KOps/Sec`, `32.034 MB/s`, `18.554 MB/s`, `14.238 MB/s`, `32 ns`, `36.146 MB/s`, `3471`, `14-04-2025`, `$235.99`
 
+#### Visualizations
 
+* Line chart for Price (green) and Average Mark (blue) - 2025
+* Multi-year (2020–2025) trend chart
 
-Desktops
-This page lists desktops with their specifications and prices, similar to the Laptops page but tailored for desktop systems.
+#### User Interactions
 
-Data Displayed:
-A table with columns for S.No, Name, Processor, RAM, Storage, Graphics, Operating System, and Price.
-Example: HP 68.6 cm (27) All-in-One PC 27-cr1027in, Intel Core Ultra 5 Processor, 16 GB DDR5-5600 RAM, 1 TB SSD, 68.6 cm FHD Display with Intel UHD Graphics, Windows 11 Home, ₹82,999.
-A summary of brands (e.g., HP: 79, Lenovo: 30, Dell: 38) with counts.
+* Search by memory name
+* Filter by year
+* Toggle: Price & Average Mark Analysis
+* Clear filters
 
+---
 
-Visualizations:
-None on this page (focus is on tabular data).
+### Desktops
 
+#### Data Displayed
 
-User Interactions:
-Search by name or processor (e.g., "Intel Core Ultra 7").
-Filter by brand (HP, Lenovo, Dell) using buttons.
-Clear filters with the "Clear" button.
+* Table columns: S.No, Name, Processor, RAM, Storage, Graphics, OS, Price
+* Example: `HP All-in-One PC 27-cr1027in`, `Intel Ultra 5`, `16 GB DDR5`, `1 TB SSD`, `Intel UHD`, `Windows 11`, `₹82,999`
+* Brand summary: HP: 79, Lenovo: 30, Dell: 38
 
+#### Visualizations
 
+* None (tabular focus)
 
-Tabs
-This page lists tablets with their specifications and prices, focusing on mobile devices.
+#### User Interactions
 
-Data Displayed:
-A table with columns for S.No, Name, Processor, Display, RAM, ROM, Camera, Operating System, and Price.
-Example: Titan SHIELD Tab White, MT6755 Octa-Core 2.0GHz, 25.65 cm (10.1 inch) Full HD Display, 6 GB RAM, 64 GB ROM, N/A Camera, Android 14, ₹8,699.
-A summary of brands (e.g., Apple: 74, Samsung: 30, Redmi: 11, Other: 91) with counts.
+* Search by name or processor
+* Filter by brand
+* Clear filters
 
+---
 
-Visualizations:
-None on this page (focus is on tabular data).
+### Tabs
 
+#### Data Displayed
 
-User Interactions:
-Search by name or processor (e.g., "Snapdragon 7").
-Filter by brand (Apple, Samsung, Redmi, Other) using buttons.
-Clear filters with the "Clear" button.
+* Table columns: S.No, Name, Processor, Display, RAM, ROM, Camera, OS, Price
+* Example: `Titan SHIELD Tab`, `MT6755`, `10.1" FHD`, `6 GB`, `64 GB`, `N/A`, `Android 14`, `₹8,699`
+* Brand summary: Apple: 74, Samsung: 30, Redmi: 11, Other: 91
 
+#### Visualizations
 
+* None (tabular focus)
 
-Usage
+#### User Interactions
 
-Run the backend script (scraper.py) to scrape and update hardware data.
-Start the frontend server to view the dashboard.
-Use the tabs (Processors, GPUs, Laptops, etc.) to explore hardware categories.
-Analyze price and benchmark trends via the provided graphs on applicable pages.
+* Search by name or processor
+* Filter by brand
+* Clear filters
 
-Dependencies
-Backend (Python)
+---
 
-selenium: For browser automation.
-beautifulsoup4: For HTML parsing.
-urllib.parse, json, logging, etc.: For URL handling, data storage, and logging.
+## Usage
 
-Frontend (Node.js/React.js)
+* Run the backend script (`scraper.py`) to scrape and update hardware data.
+* Start the frontend server to view the dashboard.
+* Use the tabs (Processors, GPUs, Laptops, etc.) to explore hardware categories.
+* Analyze price and benchmark trends via provided graphs on applicable pages.
 
-react: For building the UI.
-axios: For fetching data (if applicable).
-chart.js: For rendering price/benchmark graphs.
+---
 
-Notes
+## Dependencies
 
-The scraper targets specific websites (add URLs here if known). Ensure the website structure hasn’t changed to avoid scraping errors.
-The .ts file in @/data is overwritten each time the scraper runs.
-Handle ChromeDriver compatibility issues by ensuring the version matches your Chrome browser.
+### Backend (Python)
 
-Troubleshooting
+* `selenium`: For browser automation
+* `beautifulsoup4`: For HTML parsing
+* `urllib.parse`, `json`, `logging`, etc.: For data handling and logs
 
-Scraper fails: Check scraper.log for errors. Ensure ChromeDriver is correctly installed and the website structure hasn’t changed.
-Frontend doesn’t load data: Verify that hardwareData.ts exists in @/data and contains valid data.
-CORS issues: If fetching data from a server, ensure CORS policies are configured.
+### Frontend (Node.js)
 
-Contributing
+* `react`, `typescript`, `chart.js`, `axios`, `tailwindcss`, etc.
 
-Add new hardware categories by updating the scraper script and frontend components.
-Improve error handling in the scraper for robustness.
-Enhance the UI with additional filters or visualizations.
-
-License
-This project is licensed under the MIT License.

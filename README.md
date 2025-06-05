@@ -10,7 +10,7 @@ The **Tech Selection Dashboard** is a robust web application designed to aggrega
 
 * **Backend**: Utilizes Python scripts with Selenium and BeautifulSoup to scrape data, which is then stored in a TypeScript (`.ts`) file located in the `@/data` directory.
 * **Frontend**: Built with Node.js and React.js, the frontend presents the scraped data through an intuitive dashboard featuring interactive graphs and tables.
-* **Last Updated**: 04-06-2025
+* **Last Updated**: 05-06-2025
 
 ## Features
 

@@ -6,7 +6,7 @@ Certainly! Here's a comprehensive and detailed documentation for the **Tech Sele
 
 ## Overview
 
-The **Tech Selection Dashboard** is a robust web application designed to aggregate, analyze, and visualize hardware data across various categories, including processors, GPUs, laptops, memory modules, tablets, and desktops. By scraping data from multiple reputable sources, the application provides users with up-to-date information on pricing, specifications, and performance benchmarks for the year 2025.
+The **Tech Selection Dashboard** is a robust web application designed to aggregate, analyze, and visualize hardware data across various categories, including processors, GPUs, laptops, memory modules, tablets, and desktops. By scraping data from multiple reputable sources, the application provides users with up-to-date information on pricing, specifications, and performance benchmarks for the latest year.
 
 * **Backend**: Utilizes Python scripts with Selenium and BeautifulSoup to scrape data, which is then stored in a TypeScript (`.ts`) file located in the `@/data` directory.
 * **Frontend**: Built with Node.js and React.js, the frontend presents the scraped data through an intuitive dashboard featuring interactive graphs and tables.

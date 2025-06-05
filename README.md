@@ -75,23 +75,16 @@ Efftronics Server Dashboard is a web application that scrapes hardware data (pro
 3. Start the development server:
 
    ```bash
-   npm start
+   npm  run dev
    ```
 
 * The app will be available at `http://localhost:3000`.
 * It reads data from `@/data/hardwareData.ts` to display the dashboard.
 
-## Project Structure
-
-* `/scraper.py`: Python script for web scraping.
-* `/frontend/`: React.js frontend code.
-* `@/data/hardwareData.ts`: TypeScript file storing scraped hardware data.
-* `/logs/scraper.log`: Log file for backend scraping errors.
 
 ## Pages Overview
-
+People struggle to compare devices like laptops and tablets due to scattered information  online. these a dashboard that gathers details from websites and shows them on a webpage. The dashboard helps users see device information like price and features side by side. It makes choosing the best device easier and faster for everyone. 
 The dashboard consists of six main pages, each dedicated to a specific hardware category. Below is a detailed description of each page, including the data displayed, visualizations, and user interactions.
-
 ---
 
 ### Latest Processors List
@@ -99,9 +92,10 @@ The dashboard consists of six main pages, each dedicated to a specific hardware 
 #### Data Displayed
 
 * Table columns: Name, CPU Class, Price (USD), Price/Core (USD), Benchmark (Single-Core), Benchmark (Multi-Core)
-* Example: `Intel Core Ultra 5 235U`, Laptop, `$332.00 USD`, `$27.8667 USD/core`, `3907`, `18101`
+* Example: `Intel Core Ultra 5 235U` 
 * Suggested processors for best value: e.g., `Intel Core Ultra 7 256V`, `$484.00`, Benchmark `40390`
 
+![image](https://github.com/user-attachments/assets/ad5a2342-3e64-4479-82d0-3368a8741f67)
 #### Visualizations
 
 * Combined chart with:
@@ -118,6 +112,8 @@ The dashboard consists of six main pages, each dedicated to a specific hardware 
 * Toggle views: Price & Benchmark
 * Compare processors
 * Clear filters
+
+![image](https://github.com/user-attachments/assets/2c928319-d037-4a34-b322-ddf6269fdcb1)
 
 ---
 

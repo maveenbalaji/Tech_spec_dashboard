@@ -108,6 +108,7 @@ The dashboard comprises six main pages, each dedicated to a specific hardware ca
 
   * *Intel Core Ultra 5 235U*, Laptop, \$332.00 USD, \$27.87 USD/core, 3907 (Single-Core), 18101 (Multi-Core)
 * Suggested processors based on best value, e.g., *Intel Core Ultra 7 256V* at \$484.00 with a Multi-Core Benchmark of 40390.
+  
   ![image](https://github.com/user-attachments/assets/d44b7be7-e952-4b3e-8b1e-af845e5a1595)
 
 
@@ -127,6 +128,7 @@ The dashboard comprises six main pages, each dedicated to a specific hardware ca
 * Toggle between "Price & Benchmark" views using buttons.
 * Compare processors by selecting them via the "Compare" button.
 * Clear filters using the "Clear" button.
+  
 ![image](https://github.com/user-attachments/assets/cdd47eda-aa75-4c7a-8d1c-2f7059c9ccbb)
 
 
